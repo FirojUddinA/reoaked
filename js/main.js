@@ -62,19 +62,51 @@ csMenuOpt.click(function() {
 })
 
 
+let image_10 = '<div class="main_img"><label for="main_image"><input class="file_upload1" id="main_image" name="file_cover" type="file"> <img id="previewImg" src="./img/svg/phote_up.svg" alt=""></label> <div class="uploaded_image"> <img src="./img/product_2.jpg" alt="" class="up_image"> <label for="main_image" class="action_button edit">  <span class="icon-lead-pencil"></span></label> <button class="action_button delete"> <span class="icon-trash-can-outline"></span> </button></div></div>';
 
 
 
-$(document).ready(function(){
-  $("input.file_upload1").change(function(){
-        var parent = $(this).parents('.main_img');
-        console.log(parent.find('.up_image'));
-        parent.find('.previewImg').attr('src', $(this).val());
-        parent.find('.up_image').attr('src',  $(this).val()); 
-        
-  });
-});
+
+
 
 })
 
 $(function () { $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html"); });
+
+
+$(document).ready(function(){
+
+  $("input.file_uploa").on('change',function(){
+    let reader = new FileReader();
+    var image_sorce = '';
+    var parent = $(this).parents('.main_img');
+    reader.addEventListener('load', ()=>{
+      image_sorce = reader.result;
+      parent.find('.up_image').attr('src',  image_sorce); 
+      // alert(image_sorce);
+    })
+    reader.readAsDataURL(this.files[0]);
+  });
+$('body').on('click','input[class^="file_upload"]',function(){
+ 
+  $(this).on('change',function(){
+    console.log("Ok")
+    let reader = new FileReader();
+    var image_sorce = '';
+    var parent = $(this).parents('.main_img');
+    reader.addEventListener('load', ()=>{
+      image_sorce = reader.result;
+      parent.find('.up_image').attr('src',  image_sorce).addClass('used'); 
+    })
+    reader.readAsDataURL(this.files[0]);
+
+    var item_length = $('#more_images').children().length;
+    let image_10 = '<div class="main_img"><label for="main_image' + item_length + '"><input class="file_upload' + item_length + '" id="main_image' + item_length + '" name="file_cover" type="file"> <img id="previewImg" src="./img/svg/phote_up.svg" alt=""></label> <div class="uploaded_image"> <img src="./img/product_2.jpg" alt="" class="up_image"> <label for="main_image' + item_length + '" class="action_button edit">  <span class="icon-lead-pencil"></span></label> <button class="action_button delete"> <span class="icon-trash-can-outline"></span> </button></div></div>';
+    if(item_length < 10){
+      $('#more_images').append(image_10);
+    }
+    
+  });
+   
+})
+});
