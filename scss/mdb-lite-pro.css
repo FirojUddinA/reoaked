@@ -7375,7 +7375,7 @@ ul.stepper li.active a .label, ul.stepper li.completed a .label {
   border-bottom-left-radius: 0.3em;
 }
 .treeview-animated .treeview-animated-list .treeview-animated-items .closed:hover {
-  background-color: #8cb9ff;
+  background-color: rgb(140, 185, 255);
 }
 .treeview-animated .treeview-animated-list .treeview-animated-items .closed .fa-angle-right {
   font-size: 0.8rem;
@@ -7387,12 +7387,12 @@ ul.stepper li.active a .label, ul.stepper li.completed a .label {
   transform: rotate(90deg);
 }
 .treeview-animated .treeview-animated-list .treeview-animated-items .open {
-  background-color: #32a0ff;
+  background-color: rgb(50, 160, 255);
   transition: all 0.1s linear;
 }
 .treeview-animated .treeview-animated-list .treeview-animated-items .open:hover {
   color: #f8f9fa;
-  background-color: #32a0ff;
+  background-color: rgb(50, 160, 255);
 }
 .treeview-animated .treeview-animated-list .treeview-animated-items .open span {
   color: #f8f9fa;
@@ -7405,15 +7405,15 @@ ul.stepper li.active a .label, ul.stepper li.completed a .label {
   transition: all 0.1s linear;
 }
 .treeview-animated .treeview-animated-list .treeview-animated-element:hover {
-  background-color: #8cb9ff;
+  background-color: rgb(140, 185, 255);
 }
 .treeview-animated .treeview-animated-list .treeview-animated-element.opened {
   color: #f8f9fa;
-  background-color: #32a0ff;
+  background-color: rgb(50, 160, 255);
 }
 .treeview-animated .treeview-animated-list .treeview-animated-element.opened:hover {
   color: #f8f9fa;
-  background-color: #32a0ff;
+  background-color: rgb(50, 160, 255);
 }
 
 .treeview-colorful {
@@ -7633,7 +7633,7 @@ button, html [type=button], [type=reset], [type=submit] {
   margin-left: -23px;
   font-size: 11px;
   color: #fff;
-  background-color: #fe1212;
+  background-color: rgb(254, 18, 18);
   border-radius: 10em;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
